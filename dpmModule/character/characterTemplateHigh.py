@@ -348,29 +348,29 @@ def getU8000CharacterTemplate(_type):
     #Temporal union object..
     template = ichar(level = 255)
     
-    template.add_summary("에디: 2.5줄, 무기류 공21%")
+    template.add_summary("에디: 0줄, 무기류 공0%")
 
-    weaponAPtnl = ExMDF(patt = 21)
-    subAPtnl = ExMDF(patt = 21)
-    emblemAPtnl = ExMDF(patt = 21)
+    weaponAPtnl = ExMDF(patt = 0)
+    subAPtnl = ExMDF(patt = 0)
+    emblemAPtnl = ExMDF(patt = 0)
 
     template.add_summary("방어구/장신구: 레전27%, 추옵 120급, 스타포스 22성")
     template.add_summary("장갑: 크뎀2줄")
-    armorAPtnl = ExMDF(att = 10, pstat_main = 6)
+    armorAPtnl = ExMDF(att =0, pstat_main = 0)
     armorPtnl = ExMDF(pstat_main = 27)
     armorBonus = ExMDF(pstat_main = 6, pstat_sub = 6, stat_main = 60)
     armorStar = 22
     
-    accAPtnl = ExMDF(att = 10, pstat_main = 6)
+    accAPtnl = ExMDF(att = 0, pstat_main = 0)
     accPtnl = ExMDF(pstat_main = 27)
     accBonus = ExMDF(stat_main = 120)
     accStar = 22
     
-    template.add_summary("무기: 스타포스 22성, 1추옵")
+    template.add_summary("무기: 스타포스 22성, 2추옵")
     weaponStar = 22
-    bonusAttIndex = 1
+    bonusAttIndex = 2
 
-    template.add_summary("장신구: 보장5셋, 마이, 칠요")
+    template.add_summary("장신구: 보장5셋")
     template.add_summary("방어구: 앱솔5셋, 카루타 2셋, 아케인셰이드")
     bossAccesorySet = BossAccesory.Factory.getBetter11SetDict(potential = accPtnl, bonus = accBonus, enhance = 30, star = accStar, additional_potential = accAPtnl)
     rootAbyssSet = RootAbyss.Factory.getArmorSetDict(potential = armorPtnl, bonus = armorBonus, enhance = 30, star = armorStar, additional_potential = armorAPtnl)
@@ -391,15 +391,20 @@ def getU8000CharacterTemplate(_type):
                                                         bonus = accBonus,
                                                         additional_potential = accAPtnl,
                                                         star = 0)
-    meisterSet["ear"].add_main_option(it.EnhancerFactory.get_surprise_enhancement(140, 12))
-    meisterSet["ring2"].add_main_option(it.EnhancerFactory.get_surprise_enhancement(140, 12))
+
+
+    ##마이링, 마이이어링에 놀장 대신 22성 스타포스
+    meisterSet["ear"].add_main_option(it.EnhancerFactory.get_armor_starforce_enhancement(140, 22))
+    meisterSet["ring2"].add_main_option(it.EnhancerFactory.get_armor_starforce_enhancement(140, 22))
+    meisterSet["pendant"].add_main_option(it.EnhancerFactory.get_armor_starforce_enhancement(130, 20))
+    meisterSet["face"].add_main_option(it.EnhancerFactory.get_armor_starforce_enhancement(130, 20))
     
     absolabSet = Absolab.Factory.getArmorSetDict(potential = armorPtnl, bonus = armorBonus, enhance = 30, star = armorStar, additional_potential = armorAPtnl)
     absolabSet["glove"].set_potential(ExMDF(crit_damage = 16))
 
     weeklySet = Else.get_weekly_set()
 
-    template.add_summary("기타: 핑아, 하트 공120, 펫공 120")
+    template.add_summary("기타: 핑아, 하트 공0, 펫공 0")
     
 
     template.set_items({
@@ -410,25 +415,25 @@ def getU8000CharacterTemplate(_type):
         "shoes": absolabSet["shoes"],
         "cloak": absolabSet["cloak"],
         "eye": bossAccesorySet["eye"],
-        "face": bossAccesorySet["face"],
+        "face": meisterSet["face"],
         "ear": meisterSet["ear"],
         "belt": bossAccesorySet["belt"],
-        "ring1": bossAccesorySurprise["ring1"],
+        "ring1": Default.getEventRing(potential = accPtnl),
         "ring2": meisterSet["ring2"],
         "ring3": Default.getEventRing(potential = accPtnl),
         "ring4": Default.getEventRing(potential = accPtnl),
         "shoulder": absolabSet["shoulder"],
-        "pendant1": bossAccesorySurprise["pendant1"],
-        "pendant2": bossAccesorySurprise["pendant2"],
+        "pendant1": meisterSet["pendant"],
+        "pendant2": bossAccesorySet["pendant2"],
         "pocket": bossAccesorySet["pocket"],
-        "badge": weeklySet["badge"],
+        "badge": bossAccesorySet["badge"],
         "weapon": Arcane.Factory.getWeapon(_type, elist = [0,0,0,9], bonusAttIndex = bonusAttIndex, star = weaponStar, potential = ExMDF(), additional_potential = weaponAPtnl ),
         "subweapon": Default.get_subweapon_covering_exception(_type, elist = [0,0,0,9], star=weaponStar, potential = ExMDF(), additional_potential = subAPtnl, factory_hook=Arcane.Factory),
         "emblem": Default.getEmblem(potential = ExMDF(), additional_potential = emblemAPtnl),
         "medal": weeklySet["medal"],
-        "heart": Else.get_heart(120, accPtnl, accAPtnl),
+        "heart": Else.get_heart(0, accPtnl, accAPtnl),
         "title": Else.PingkbinAndMe.copy(),
-        "pet": Else.get_pet(120),
+        "pet": Else.get_pet(0),
     })
     
     template.apply_modifiers([Absolab.Factory.getSetOption(5), 
