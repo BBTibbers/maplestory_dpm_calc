@@ -9,7 +9,7 @@ import time, argparse
 
 def get_args():
     parser = argparse.ArgumentParser('DPM Full Test argument')
-    parser.add_argument('--ulevel', nargs="+", type=int, default=[4000, 5000, 6000, 7000, 8000, 8500])
+    parser.add_argument('--ulevel', nargs="+", type=int, default=[8000])
     parser.add_argument('--time', type=int, default=1800)
     parser.add_argument('--thread', type=int, default=4)
 
