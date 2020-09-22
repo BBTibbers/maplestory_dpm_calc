@@ -87,8 +87,8 @@ class EnhancerFactory():
     starforce_200_stat = [0, 2, 4, 6, 8, 10, 13, 16, 19, 22, 25, 28, 31, 34, 37, 40, 55, 70, 85, 100, 115, 130, 145]
     starforce_200_armor_att = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 25, 39, 54, 70, 87, 106]
     
-    armor_scroll_list = [[1,2,3],[2,3,5],[3,4,7]]
-    glove_scroll_list = [[0,1,2],[1,2,3]]
+    armor_scroll_list = [[0,0,0],[0,0,0],[0,0,0]]
+    glove_scroll_list = [[0,0,0],[0,0,0]]
     glove_starforce_att_list = [0,0,0,0,0,1,1,2,2,3,3,4,4,5,6,7,7,7,7,7,7,7,7,7]
     
     starforce_130_weapon_att_delta = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,7,7,8,9]
@@ -97,8 +97,8 @@ class EnhancerFactory():
     starforce_160_weapon_att_delta = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,9,9,10,11,12,13,14]
     starforce_200_weapon_att_delta = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,13,13,14,14,15,16,17]
     
-    weapon_scroll_stat = [[0,0,1,2], [0,1,2,3], [1,2,3,4]] 
-    weapon_scroll_att = [[1,2,3,5],[2,3,5,7],[3,5,7,9]]
+    weapon_scroll_stat = [[0,0,0,0], [0,0,0,0], [0,0,0,0]] 
+    weapon_scroll_att = [[0,0,0,0],[0,0,0,0],[0,0,0,0]]
     
     surprise_starforce_70_delta = [1,2,4,7,11,1,2,3,4,5,6,8]
     surprise_starforce_80_delta = [2,3,5,8,12,2,3,4,5,6,7,9]
