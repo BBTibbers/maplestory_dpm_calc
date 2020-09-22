@@ -38,10 +38,12 @@ class JobGenerator(ck.JobGenerator):
         ReadyToDiePassive = thieves.ReadyToDiePassiveWrapper(vEhc, 2, 2)
     
         DaggerExpert = core.InformedCharacterModifier("대거 엑스퍼트",att = 40 + passive_level, crit_damage = 15 + passive_level//3)
+
+        Reboot =  core.InformedCharacterModifier("리부트", att = 5, pdamage = 127)
         
         return [NimbleBody, Karma,
                         PhisicalTraining, SheildMastery, Grid, PrimaCriticalPassive,
-                        PrimaCritical, BoomerangStepPassive, ShadowerInstinctPassive, ReadyToDiePassive, DaggerExpert]
+                        PrimaCritical, BoomerangStepPassive, ShadowerInstinctPassive, ReadyToDiePassive, DaggerExpert, Reboot]
 
     def get_not_implied_skill_list(self, vEhc, chtr : ck.AbstractCharacter):
         passive_level = chtr.get_base_modifier().passive_level + self.combat

@@ -44,9 +44,11 @@ class JobGenerator(ck.JobGenerator):
         CrossBowExpert = core.InformedCharacterModifier("크로스보우 엑스퍼트",att= 30+passive_level, crit_damage = 8)
 
         ElusionStep = core.InformedCharacterModifier("일루젼 스탭", stat_main = 40 + passive_level)
+
+        Reboot =  core.InformedCharacterModifier("리부트", att = 5, pdamage = 127)
         
         return [CriticalShot, PhisicalTraining, MarkmanShip, 
-                CrossBowExpert, ElusionStep]
+                CrossBowExpert, ElusionStep, Reboot]
 
     def get_not_implied_skill_list(self, vEhc, chtr : ck.AbstractCharacter):
         passive_level = chtr.get_base_modifier().passive_level + self.combat

@@ -147,10 +147,12 @@ class JobGenerator(ck.JobGenerator):
         FusionComplete = core.InformedCharacterModifier("융합 완성", att = 40 + passive_level, crit = 10 + ceil(passive_level/3), armor_ignore = 30 + passive_level, boss_pdamage = 30 + passive_level)
         BattleRage = core.InformedCharacterModifier("전투 광란", pdamage_indep = 20 + passive_level)
         LoadedDicePassive = pirates.LoadedDicePassiveWrapper(vEhc, 3, 4)
+
+        Reboot =  core.InformedCharacterModifier("리부트", att = 5, pdamage = 127)
     
         return [MagicCircuit, MisticArtsMastery, 
                                     NuckleMastery, PhisicalTraining, 
-                                    FusionProgress, NuckleExpret, FusionComplete, BattleRage, LoadedDicePassive]
+                                    FusionProgress, NuckleExpret, FusionComplete, BattleRage, LoadedDicePassive, Reboot]
 
     def get_not_implied_skill_list(self, vEhc, chtr : ck.AbstractCharacter):
         WeaponConstant = core.InformedCharacterModifier("무기상수", pdamage_indep = 70)

@@ -27,7 +27,11 @@ class JobGenerator(ck.JobGenerator):
         
         WindBlessingPassive = core.InformedCharacterModifier("윈드 블레싱(패시브)", pstat_main = 15+passive_level//3, patt = 10 + ceil(passive_level/3))
         BowExpert = core.InformedCharacterModifier("보우 엑스퍼트", att = 30 + passive_level, crit_damage = 20+passive_level//2, pdamage_indep = 25 + passive_level//3, boss_pdamage = 40 + passive_level)
-        return [ElementalExpert, ElementalHarmony, WhisperOfWind, PhisicalTraining, BowExpert, WindBlessingPassive]
+        Reboot =  core.InformedCharacterModifier("리부트", att = 5, pdamage = 127)
+    
+        return [ElementalExpert, ElementalHarmony, WhisperOfWind, PhisicalTraining, BowExpert, WindBlessingPassive, Reboot]
+
+
 
     def get_not_implied_skill_list(self, vEhc, chtr : ck.AbstractCharacter):
         passive_level = chtr.get_base_modifier().passive_level + self.combat

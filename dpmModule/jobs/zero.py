@@ -56,8 +56,9 @@ class JobGenerator(ck.JobGenerator):
     def get_passive_skill_list(self, vEhc, chtr : ck.AbstractCharacter):
         Mastery = core.InformedCharacterModifier("숙련도",pdamage_indep = -5)
         ResolutionTime = core.InformedCharacterModifier("리졸브 타임",pdamage_indep = 25, stat_main = 50)
+        Reboot =  core.InformedCharacterModifier("리부트", att = 5, pdamage = 127)
 
-        return [Mastery, ResolutionTime]
+        return [Mastery, ResolutionTime, Reboot]
 
     def get_not_implied_skill_list(self, vEhc, chtr : ck.AbstractCharacter):
         ArmorSplit = core.InformedCharacterModifier("아머 스플릿", armor_ignore = 50)

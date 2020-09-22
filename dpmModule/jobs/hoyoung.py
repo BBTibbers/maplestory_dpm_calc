@@ -128,7 +128,9 @@ class JobGenerator(ck.JobGenerator):
         DragonsEye = core.InformedCharacterModifier("점정", att = 10 + passive_level, pdamage_indep = 10 + passive_level, crit = 10 + passive_level, crit_damage = 10 + passive_level, armor_ignore = 10 + passive_level)
         ReadyToDiePassive = thieves.ReadyToDiePassiveWrapper(vEhc, 0, 0)
 
-        return [SpiritAffinity, FiendSeal, RitualFanMastery, ThirdEye, FortuneFitness, Asura, AdvancedRitualFanMastery, Enlightenment, DragonsEye, ReadyToDiePassive]
+        Reboot =  core.InformedCharacterModifier("리부트", att = 5, pdamage = 127)
+
+        return [SpiritAffinity, FiendSeal, RitualFanMastery, ThirdEye, FortuneFitness, Asura, AdvancedRitualFanMastery, Enlightenment, DragonsEye, ReadyToDiePassive, Reboot]
 
     def get_not_implied_skill_list(self, vEhc, chtr : ck.AbstractCharacter):
         passive_level = chtr.get_base_modifier().passive_level + self.combat

@@ -42,9 +42,11 @@ class JobGenerator(ck.JobGenerator):
         SoulPledge = core.InformedCharacterModifier("소울 플레지",stat_main = 30+passive_level, stat_sub = 30+passive_level, crit = 10)
         SwordExpert = core.InformedCharacterModifier("소드 엑스퍼트",att = 50+passive_level, crit_damage = 15+passive_level//3)
         Unforseeable = core.InformedCharacterModifier("언포시어블",armor_ignore = 30+2*passive_level, boss_pdamage = 15+passive_level)
+
+        Reboot =  core.InformedCharacterModifier("리부트", att = 5, pdamage = 127)
         
         return [ElementalHarmony, ElementalExpert, SwordOfLight, Soul, InnerTrust,
-                            BodyAndSoul, InnerShout, SoulPledge, SwordExpert, Unforseeable]
+                            BodyAndSoul, InnerShout, SoulPledge, SwordExpert, Unforseeable, Reboot]
 
     def get_not_implied_skill_list(self, vEhc, chtr : ck.AbstractCharacter):
         passive_level = chtr.get_base_modifier().passive_level + self.combat

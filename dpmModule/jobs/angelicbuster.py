@@ -50,10 +50,12 @@ class JobGenerator(ck.JobGenerator):
         
         LoadedDicePassive = pirates.LoadedDicePassiveWrapper(vEhc, 1, 2)
         TrinityFusionPassive = core.InformedCharacterModifier("트리니티 퓨전(패시브)", stat_main = 10 + vEhc.getV(0,0))
+
+        Reboot =  core.InformedCharacterModifier("리부트", att = 5, pdamage = 127)
     
         return [SoulShooterMastery, InnerFire,
                             CallOfAncient, AffinityIII, AffinityIV, TrinityPassive, SoulShooterExpert,
-                            LoadedDicePassive, TrinityFusionPassive]
+                            LoadedDicePassive, TrinityFusionPassive, Reboot]
 
     def get_not_implied_skill_list(self, vEhc, chtr : ck.AbstractCharacter):
         passive_level = chtr.get_base_modifier().passive_level + self.combat

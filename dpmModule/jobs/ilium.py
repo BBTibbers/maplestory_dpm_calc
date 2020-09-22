@@ -152,9 +152,11 @@ class JobGenerator(ck.JobGenerator):
         DestinyPioneer = core.InformedCharacterModifier("운명 개척", stat_main = 40, patt = 10)
         ContinualResearch = core.InformedCharacterModifier("끊임없는 연구", att = 50, crit = 20, crit_damage = 30)
         CrystalSecret = core.InformedCharacterModifier("크리스탈의 비밀", boss_pdamage = 30, pdamage_indep = 35, armor_ignore = 25)
+
+        Reboot =  core.InformedCharacterModifier("리부트", att = 5, pdamage = 127)
         
         return [MagicCircuit, MagicGuntletMastery, BlessMarkPassive,
-            LefMastery, DestinyPioneer, ContinualResearch, CrystalSecret ]
+            LefMastery, DestinyPioneer, ContinualResearch, CrystalSecret, Reboot ]
 
     def get_not_implied_skill_list(self, vEhc, chtr : ck.AbstractCharacter):
         WeaponConstant = core.InformedCharacterModifier("무기상수", pdamage_indep = 20)

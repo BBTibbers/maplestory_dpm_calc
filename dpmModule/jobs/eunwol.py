@@ -58,8 +58,10 @@ class JobGenerator(ck.JobGenerator):
 
         LoadedDicePassive = core.InformedCharacterModifier("로디드 다이스(패시브)", att = vEhc.getV(4,4) + 10)
 
+        Reboot =  core.InformedCharacterModifier("리부트", att = 5, pdamage = 127)
+
         return [PhisicalTraining, SpiritLink_3, 
-                SpiritLink_4, AdvancedNuckleMastery, WeaknessFinding, LoadedDicePassive]
+                SpiritLink_4, AdvancedNuckleMastery, WeaknessFinding, LoadedDicePassive, Reboot]
 
     def get_not_implied_skill_list(self, vEhc, chtr : ck.AbstractCharacter):
         passive_level = chtr.get_base_modifier().passive_level + self.combat

@@ -32,9 +32,11 @@ class JobGenerator(ck.JobGenerator):
         UnwierdingNectar = core.InformedCharacterModifier("언위어링 넥타", crit=10)
     
         LoadedDicePassive = pirates.LoadedDicePassiveWrapper(vEhc, 1, 2)
+
+        Reboot =  core.InformedCharacterModifier("리부트", att = 5, pdamage = 127)
     
         return [CriticalRoar, PhisicalTraining, HalopointBullet, ContinualAimingPassive,
-            FullMetaJacket, CaptainDignityPassive, CrueCommandership, UnwierdingNectar, LoadedDicePassive]
+            FullMetaJacket, CaptainDignityPassive, CrueCommandership, UnwierdingNectar, LoadedDicePassive, Reboot]
 
     def get_not_implied_skill_list(self, vEhc, chtr : ck.AbstractCharacter):
         passive_level = chtr.get_base_modifier().passive_level + self.combat

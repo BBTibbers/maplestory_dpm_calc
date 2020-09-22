@@ -173,9 +173,11 @@ class JobGenerator(ck.JobGenerator):
         AdvancedWillOfSwordPassive = core.InformedCharacterModifier("어드밴스드 윌 오브 소드(패시브)",att = 20 + 2*ceil(passive_level/3))
         UnflinchingCourage = core.InformedCharacterModifier("언플린칭 커리지",armor_ignore = 40 + passive_level)
         AdvancedSwordMastery = core.InformedCharacterModifier("어드밴스드 소드 마스터리", att = 30 + passive_level, crit_damage = 15 + passive_level//3, crit=20 + passive_level//2)
+
+        Reboot =  core.InformedCharacterModifier("리부트", att = 5, pdamage = 127)
     
         return [InnerBlaze, AdvancedInnerBlaze, Catalyze, 
-                AdvancedWillOfSwordPassive, UnflinchingCourage, AdvancedSwordMastery]
+                AdvancedWillOfSwordPassive, UnflinchingCourage, AdvancedSwordMastery, Reboot]
                 
     def get_not_implied_skill_list(self, vEhc, chtr : ck.AbstractCharacter):
         passive_level = chtr.get_base_modifier().passive_level + self.combat

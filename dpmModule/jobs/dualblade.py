@@ -32,9 +32,11 @@ class JobGenerator(ck.JobGenerator):
         DualBladeExpert = core.InformedCharacterModifier("이도류 엑스퍼트", att = 30 + passive_level, pdamage_indep = 20 + passive_level // 2)
         Sharpness = core.InformedCharacterModifier("샤프니스", crit = 35 + 3 * passive_level, crit_damage = 13 + passive_level)
         ReadyToDiePassive = thieves.ReadyToDiePassiveWrapper(vEhc, 2, 2)
+
+        Reboot =  core.InformedCharacterModifier("리부트", att = 5, pdamage = 127)
         
         return [Karma, PhisicalTraining, SornsEffect, DualBladeExpert, Sharpness,
-                            ReadyToDiePassive]
+                            ReadyToDiePassive, Reboot]
 
     def get_not_implied_skill_list(self, vEhc, chtr : ck.AbstractCharacter):
         passive_level = chtr.get_base_modifier().passive_level + self.combat

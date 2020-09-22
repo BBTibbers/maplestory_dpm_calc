@@ -114,8 +114,9 @@ class JobGenerator(ck.JobGenerator):
         Expert = core.InformedCharacterModifier("엑스퍼트", att=30)
         Demolition = core.InformedCharacterModifier("데몰리션", pdamage_indep=30+passive_level, armor_ignore=20+passive_level)
         Attain = core.InformedCharacterModifier("어테인", att=30+passive_level, boss_pdamage=10+ceil(passive_level/2), crit=20+passive_level)
+        Reboot =  core.InformedCharacterModifier("리부트", att = 5, pdamage = 127)
 
-        return [MagicCircuit, Pace, Rudiment, Mastery, Train, Accent, Expert, Demolition, Attain]
+        return [MagicCircuit, Pace, Rudiment, Mastery, Train, Accent, Expert, Demolition, Attain, Reboot]
 
     def get_not_implied_skill_list(self, vEhc, chtr : ck.AbstractCharacter):
         passive_level = chtr.get_base_modifier().passive_level + self.combat

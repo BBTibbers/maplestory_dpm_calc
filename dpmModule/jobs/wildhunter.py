@@ -83,10 +83,12 @@ class JobGenerator(ck.JobGenerator):
         ExtentMagazine = core.InformedCharacterModifier("익스텐드 매거진", pdamage_indep=20 + passive_level // 3, stat_main=60 + 2*passive_level, stat_sub=60 + 2*passive_level)
         AdvancedFinalAttackPassive = core.InformedCharacterModifier("어드밴스드 파이널 어택(패시브)", att = 20 + ceil(passive_level/2))
         JaugerStormPassive = core.InformedCharacterModifier("재규어 스톰(패시브)", att = 5+2*vEhc.getV(0,0))
+
+        Reboot =  core.InformedCharacterModifier("리부트", att = 5, pdamage = 127)
     
         return [Jaguer, NaturesWrath, AutomaticShootingDevice,
                             CrossbowMastery, PhisicalTraining, Flurry, JaugerLink, CrossbowExpert, 
-                            WildInstinct, ExtentMagazine, AdvancedFinalAttackPassive, JaugerStormPassive]
+                            WildInstinct, ExtentMagazine, AdvancedFinalAttackPassive, JaugerStormPassive, Reboot]
 
     def get_not_implied_skill_list(self, vEhc, chtr : ck.AbstractCharacter):
         passive_level = chtr.get_base_modifier().passive_level + self.combat

@@ -63,9 +63,11 @@ class JobGenerator(ck.JobGenerator):
         DualbowgunExpert = core.InformedCharacterModifier("듀얼보우건 엑스퍼트",att = 30+passive_level, crit_damage= 10+ceil(passive_level/3))
         DefenceBreak = core.InformedCharacterModifier("디펜스 브레이크",armor_ignore= 25+passive_level, pdamage_indep= 20+passive_level, boss_pdamage = 20+3*(passive_level//4), crit_damage = 20+3*(passive_level//4))
         AdvancedFinalAttack = core.InformedCharacterModifier("어드밴스드 파이널 어택",att = 20 + ceil(passive_level / 2))
+
+        Reboot =  core.InformedCharacterModifier("리부트", att = 5, pdamage = 127)
         
         return [PotentialPower, SharpAiming, SpiritInfusion, 
-                PhisicalTraining, IgnisRoar, DualbowgunExpert, DefenceBreak, AdvancedFinalAttack]
+                PhisicalTraining, IgnisRoar, DualbowgunExpert, DefenceBreak, AdvancedFinalAttack, Reboot]
         
     def get_not_implied_skill_list(self, vEhc, chtr : ck.AbstractCharacter):
         passive_level = chtr.get_base_modifier().passive_level + self.combat

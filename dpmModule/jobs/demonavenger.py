@@ -52,8 +52,10 @@ class JobGenerator(ck.JobGenerator):
             # 극한 HP = 800(600+200), 루인 HP = 560
             RuinForceShield = core.InformedCharacterModifier("루인 포스실드", stat_main = -240, stat_sub = -2, pdamage_indep = 10)
 
+        Reboot =  core.InformedCharacterModifier("리부트", att = 5, pdamage = 127)
 
-        return [AbyssalRage, AdvancedDesperadoMastery, OverwhelmingPower, DefenseExpertise, DemonicSharpness, MapleHeroesDemon, InnerStrength, DiabolicRecovery, FrenzyPassive]
+
+        return [AbyssalRage, AdvancedDesperadoMastery, OverwhelmingPower, DefenseExpertise, DemonicSharpness, MapleHeroesDemon, InnerStrength, DiabolicRecovery, FrenzyPassive, Reboot]
 
     def get_not_implied_skill_list(self, vEhc, chtr : ck.AbstractCharacter):
         passive_level = chtr.get_base_modifier().passive_level + self.combat

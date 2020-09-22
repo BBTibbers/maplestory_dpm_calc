@@ -93,9 +93,12 @@ class JobGenerator(ck.JobGenerator):
         
         AncientBowExpert = core.InformedCharacterModifier("에인션트 보우 엑스퍼트", att=60 + 2*passive_level, crit_damage = 10+ceil(passive_level/3))
         IllusionStep = core.InformedCharacterModifier("일루젼 스텝", stat_main = 80 + 2*passive_level)
+
+        Reboot =  core.InformedCharacterModifier("리부트", att = 5, pdamage = 127)
+
         return [CriticalShot, AncientBowMastery, PhisicalTraining,
                                     EssenceOfArcher, AdditionalTransitionPassive, 
-                                        AncientBowExpert, IllusionStep]
+                                        AncientBowExpert, IllusionStep, Reboot]
 
     def get_not_implied_skill_list(self, vEhc, chtr : ck.AbstractCharacter):
         passive_level = chtr.get_base_modifier().passive_level + self.combat

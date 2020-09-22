@@ -32,10 +32,12 @@ class JobGenerator(ck.JobGenerator):
         OverburningCanon = core.InformedCharacterModifier("오버버닝 캐논",pdamage_indep=30 + passive_level, armor_ignore=20 + passive_level // 2)
     
         LoadedDicePassive = pirates.LoadedDicePassiveWrapper(vEhc, 3, 4)
+
+        Reboot =  core.InformedCharacterModifier("리부트", att = 5, pdamage = 127)
     
         return [BuildupCanon, CriticalFire, 
                             PirateTraining, MonkeyWavePassive, OakRuletPassive, ReinforceCanon,
-                            PirateSpirit, OverburningCanon, LoadedDicePassive]
+                            PirateSpirit, OverburningCanon, LoadedDicePassive, Reboot]
         
     def get_not_implied_skill_list(self, vEhc, chtr : ck.AbstractCharacter):
         passive_level = chtr.get_base_modifier().passive_level + self.combat

@@ -53,8 +53,10 @@ class JobGenerator(ck.JobGenerator):
         AdvancedWeaponMastery = core.InformedCharacterModifier("어드밴스드 웨폰 마스터리",att = 50 + passive_level, crit_damage = 15 + passive_level // 3)
         
         DarkBindPassive = core.InformedCharacterModifier("다크 바인드(패시브)", armor_ignore = 30 + self.combat)
+
+        Reboot =  core.InformedCharacterModifier("리부트", att = 5, pdamage = 127)
         
-        return [DeathCurse, Outrage, PhisicalTraining, Concentration, AdvancedWeaponMastery, DarkBindPassive]
+        return [DeathCurse, Outrage, PhisicalTraining, Concentration, AdvancedWeaponMastery, DarkBindPassive, Reboot]
 
     def get_not_implied_skill_list(self, vEhc, chtr : ck.AbstractCharacter):
         passive_level = chtr.get_base_modifier().passive_level + self.combat

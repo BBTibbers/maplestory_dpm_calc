@@ -31,7 +31,9 @@ class JobGenerator(ck.JobGenerator):
         
         PaladinExpert = core.InformedCharacterModifier("팔라딘 엑스퍼트(두손둔기)",crit_damage = 5 + (32+passive_level) // 3, pdamage_indep = 42+passive_level, crit = 42+passive_level, armor_ignore = 15+ceil((32+passive_level)/2)) + core.ExtendedCharacterModifier(crit_damage= 5, armor_ignore = 10)
         
-        return [PhisicalTraining, ShieldMastery, PaladinExpert]
+        Reboot =  core.InformedCharacterModifier("리부트", att = 5, pdamage = 127)
+
+        return [PhisicalTraining, ShieldMastery, PaladinExpert, Reboot]
 
     def get_not_implied_skill_list(self, vEhc, chtr : ck.AbstractCharacter):
         passive_level = chtr.get_base_modifier().passive_level

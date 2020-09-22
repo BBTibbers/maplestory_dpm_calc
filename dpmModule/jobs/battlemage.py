@@ -79,8 +79,10 @@ class JobGenerator(ck.JobGenerator):
         
         StaffExpert = core.InformedCharacterModifier("스태프 엑스퍼트",att = 30 + passive_level, crit_damage = 20 + ceil(passive_level / 2))
         SpellBoost = core.InformedCharacterModifier("스펠 부스트", patt = 25 + passive_level // 2, pdamage = 10 + ceil(passive_level / 3), armor_ignore = 30 + passive_level)
+
+        Reboot =  core.InformedCharacterModifier("리부트", att = 5, pdamage = 127)
         
-        return [ArtOfStaff, StaffMastery, HighWisdom, BattleMastery, DarkAuraPassive, StaffExpert, SpellBoost]
+        return [ArtOfStaff, StaffMastery, HighWisdom, BattleMastery, DarkAuraPassive, StaffExpert, SpellBoost, Reboot]
 
     def get_not_implied_skill_list(self, vEhc, chtr : ck.AbstractCharacter):
         passive_level = chtr.get_base_modifier().passive_level + self.combat

@@ -66,8 +66,11 @@ class JobGenerator(ck.JobGenerator):
         )
         AdvancedChargeMastery= core.InformedCharacterModifier("어드밴스드 차지 마스터리", armor_ignore = 35 + 3 * passive_level)
         CombinationTraining = core.InformedCharacterModifier("콤비네이션 트레이닝II", att = 40 + 2 * passive_level)
+
+        Reboot =  core.InformedCharacterModifier("리부트", att = 5, pdamage = 127)
+
         return [GuntletMastery, PhisicalTraining, ChargeMastery, 
-                        GuntletExpert, AdvancedChargeMastery, CombinationTraining]
+                        GuntletExpert, AdvancedChargeMastery, CombinationTraining, Reboot]
 
     def get_not_implied_skill_list(self, vEhc, chtr : ck.AbstractCharacter):
         passive_level = chtr.get_base_modifier().passive_level + self.combat

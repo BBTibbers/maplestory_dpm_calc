@@ -73,8 +73,9 @@ class JobGenerator(ck.JobGenerator):
         StimulatePassive = core.InformedCharacterModifier("스티뮬레이트(패시브)",boss_pdamage = 20)
 
         LoadedDicePassive = pirates.LoadedDicePassiveWrapper(vEhc, 2, 3)
+        Reboot =  core.InformedCharacterModifier("리부트", att = 5, pdamage = 127)
         
-        return [CriticalRoar, MentalClearity, PhisicalTraining, CriticalRage, StimulatePassive, LoadedDicePassive]
+        return [CriticalRoar, MentalClearity, PhisicalTraining, CriticalRage, StimulatePassive, LoadedDicePassive, Reboot]
 
     def get_not_implied_skill_list(self, vEhc, chtr : ck.AbstractCharacter):
         passive_level = chtr.get_base_modifier().passive_level + self.combat

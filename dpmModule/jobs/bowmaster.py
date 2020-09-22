@@ -107,9 +107,11 @@ class JobGenerator(ck.JobGenerator):
         AdvancedFinalAttackPassive = core.InformedCharacterModifier("어드밴스드 파이널 어택(패시브)",att = 20 + ceil(passive_level / 2)) #오더스 적용필요
 
         ElusionStep = core.InformedCharacterModifier("일루젼 스탭", stat_main = 80 + 2*passive_level)
+
+        Reboot =  core.InformedCharacterModifier("리부트", att = 5, pdamage = 127)
         
         return [CriticalShot, PhisicalTraining,MarkmanShip, 
-                            BowExpert, AdvancedFinalAttackPassive, ElusionStep]
+                            BowExpert, AdvancedFinalAttackPassive, ElusionStep, Reboot]
 
     def get_not_implied_skill_list(self, vEhc, chtr : ck.AbstractCharacter):
         passive_level = chtr.get_base_modifier().passive_level + self.combat

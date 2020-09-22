@@ -59,10 +59,12 @@ class JobGenerator(ck.JobGenerator):
         
         LoadedDicePassive = pirates.LoadedDicePassiveWrapper(vEhc, 1, 3)
 
+        Reboot =  core.InformedCharacterModifier("리부트", att = 5, pdamage = 127)
+
         
         return [ElementalHarmony, ElementalExpert,
             NoieBack, PhisicalTraining, Gekgap, NoiGe, NuckleExpert, NoiShin,
-            SkyOpenPassive, LoadedDicePassive]
+            SkyOpenPassive, LoadedDicePassive,Reboot]
 
     def get_not_implied_skill_list(self, vEhc, chtr : ck.AbstractCharacter):
         passive_level = chtr.get_base_modifier().passive_level + self.combat

@@ -99,11 +99,13 @@ class JobGenerator(ck.JobGenerator):
         SupremeConcentration = core.InformedCharacterModifier("정신집중-유지", buff_rem = 20+passive_level)
         Transport = core.InformedCharacterModifier("전달",armor_ignore = 25 + passive_level)
         Mastery = core.InformedCharacterModifier("숙달",crit_damage = 10 + passive_level)
+
+        Reboot =  core.InformedCharacterModifier("리부트", att = 5, pdamage = 127)
         
         return [SuperSensitive, PsychicForce1Passive, Inertia1,
                             PsychicForce2Passive, PureForce, Inertia2, ESPMastery,
                             MindEnhance, Accurate, PsychicChargingPassive, PsychicForce3Passive,
-                             ESPBattleOrder, Transcendence, SupremeConcentration, Transport, Mastery]
+                             ESPBattleOrder, Transcendence, SupremeConcentration, Transport, Mastery, Reboot]
 
     def get_not_implied_skill_list(self, vEhc, chtr : ck.AbstractCharacter):
         passive_level = chtr.get_base_modifier().passive_level + self.combat     

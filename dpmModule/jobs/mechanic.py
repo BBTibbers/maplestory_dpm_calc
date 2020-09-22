@@ -89,8 +89,12 @@ class JobGenerator(ck.JobGenerator):
         LoadedDicePassive = pirates.LoadedDicePassiveWrapper(vEhc, 1, 2)
 
         PureGoldSet = core.InformedCharacterModifier("메카닉 전용장비", att = 16, stat_main = 18, stat_sub = 18) # 작당 평균 +2 가정
-        
-        return [HiddenPiece, MechanicMastery, PhisicalTraining, LoadedDicePassive, MetalArmorExtreme, OverTunning, PureGoldSet]
+    
+        Reboot =  core.InformedCharacterModifier("리부트", att = 5, pdamage = 127)
+
+        return [HiddenPiece, MechanicMastery, PhisicalTraining, LoadedDicePassive, MetalArmorExtreme, OverTunning, PureGoldSet, Reboot]
+
+
 
     def get_not_implied_skill_list(self, vEhc, chtr : ck.AbstractCharacter):
         WeaponConstant = core.InformedCharacterModifier("무기상수",pdamage_indep = 50)

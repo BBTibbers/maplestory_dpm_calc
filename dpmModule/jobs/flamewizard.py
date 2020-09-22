@@ -39,7 +39,9 @@ class JobGenerator(ck.JobGenerator):
         BriliantEnlightenment = core.InformedCharacterModifier("번뜩이는 깨달음",stat_main = 60)
         PureMagic = core.InformedCharacterModifier("마법의 진리", att = 20 + passive_level, pdamage_indep = 50 + 3*passive_level)
 
-        return [ElementalExpert, ElementalHarmony, SpellControl, LiberatedMagic, BurningFocus, BriliantEnlightenment, PureMagic]
+        Reboot =  core.InformedCharacterModifier("리부트", att = 5, pdamage = 127)
+
+        return [ElementalExpert, ElementalHarmony, SpellControl, LiberatedMagic, BurningFocus, BriliantEnlightenment, PureMagic, Reboot]
 
     def get_not_implied_skill_list(self, vEhc, chtr : ck.AbstractCharacter):
         passive_level = chtr.get_base_modifier().passive_level + self.combat

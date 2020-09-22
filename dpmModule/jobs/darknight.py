@@ -36,7 +36,10 @@ class JobGenerator(ck.JobGenerator):
     
         SacrificePassive = core.InformedCharacterModifier("새크리파이스(패시브)",armor_ignore = 30)
         CrossoverChainPassive = core.InformedCharacterModifier("크로스 오버 체인(패시브)", pdamage_indep=50)
-        return [WeaponMastery, PhisicalTraining, LordOfDarkness, AdvancedWeaponMastery, ReincarnationBuff, ReincarnationHyper, SacrificePassive, CrossoverChainPassive]
+
+        Reboot =  core.InformedCharacterModifier("리부트", att = 5, pdamage = 127)
+
+        return [WeaponMastery, PhisicalTraining, LordOfDarkness, AdvancedWeaponMastery, ReincarnationBuff, ReincarnationHyper, SacrificePassive, CrossoverChainPassive, Reboot]
 
     def get_not_implied_skill_list(self, vEhc, chtr : ck.AbstractCharacter):
         passive_level = chtr.get_base_modifier().passive_level + self.combat

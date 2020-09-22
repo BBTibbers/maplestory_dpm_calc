@@ -131,9 +131,10 @@ class JobGenerator(ck.JobGenerator):
         WeaponMastery = core.InformedCharacterModifier("웨폰 엑스퍼트", att = 30 + passive_level, crit = 30 + passive_level, crit_damage = 15 + ceil(passive_level / 2))
         QuickserviceMind_II = core.InformedCharacterModifier("퀵서비스 마인드 II", att = 30, crit_damage = 5, crit = 10)
         ReadyToDiePassive = thieves.ReadyToDiePassiveWrapper(vEhc, 2, 3)
+        Reboot =  core.InformedCharacterModifier("리부트", att = 5, pdamage = 127)
         
         return [CollectingForLeap, PhisicalTraining,
-                                    QuickserviceMind, BasicDetection, WeaponMastery, QuickserviceMind_II, ReadyToDiePassive]
+                                    QuickserviceMind, BasicDetection, WeaponMastery, QuickserviceMind_II, ReadyToDiePassive, Reboot]
 
     def get_modifier_optimization_hint(self):
         return core.CharacterModifier(armor_ignore = 30, crit_damage = 40, pdamage = 20, crit = 6)
